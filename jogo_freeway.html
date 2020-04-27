@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
+        
+    <link rel="shortcut icon" type="image/png" href="img/navicon.png">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/layout_jogo.css">
+    <script src="js/jogo_freeway/p5.collide2d.js"></script>
+    <script src="js/jogo_freeway/imagens.js"></script>
+    <script src="js/jogo_freeway/ator.js"></script>
+    <script src="js/jogo_freeway/planeta.js"></script>
+    
+    <title>Jogo - Releitura de Freeway</title>
+</head>
+<body> 
+    <header> 
+        <a href="index.html"><button class="btnHome"><< Home</button></a>
+        <h1>Jogo - Releitura de Freeway - Atari 2600</h1>
+        <p>Tente atravessar com o asteroide sem acertar os planetas pelo caminho, clicando com as setas do teclado!</p>
+    </header>
+    <main>
+        <div class="fundoGradiente">
+            <!-- <button onClick="jogar()" class="btnJogar">Jogar</button> -->
+            <div id="canvasHolder"></div>
+            <script>
+                function setup(){
+                    somTrilha.loop()
+                    var canvas = createCanvas(600, 400)
+                    canvas.parent('canvasHolder')
+                }
+
+                function draw(){
+                    background(imgCenario)
+                    mostraAtor()
+                    mostraPlaneta()
+                    movimentaPlaneta()
+                    movimentaAtor()
+                    posicaoPlaneta()
+                    verificaColisao()
+                    pontuacao()
+                    marcaPontos()
+                }
+
+                // Acrescentar dificuldades média e difícil
+                // Limite de tentativas de perda -> abaixo de 0=perdeu
+                // Colocar tempo na hora que colide para a hora que inicia novamente o jogo
+            </script>
+        </div>    
+    </main>
+    <footer>
+        <img>
+        <p class="copyright">&copy; CopyRight VDenny</p>
+    </footer>
+</body>
+</html>

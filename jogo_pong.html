@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
+    <link rel="shortcut icon" type="image/png" href="img/navicon.png">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/layout_jogo.css">
+    <script src="js/jogo_pong/imagens.js"></script>
+    <script src="js/jogo_pong/bolinha.js"></script>
+    <script src="js/jogo_pong/raquetes.js"></script>
+
+    <title>Jogo - Pong</title>
+</head>
+<body>
+    <header>
+        <a href="index.html"><button class="btnHome"><< Home</button></a>
+        <h1>Jogo - Pong</h1>
+        <p>Tente rebater a bolinha com a sua raquete, clicando com as setas do teclado!</p>
+    </header>
+    <main>
+        <div class="fundoGradiente">
+            <!-- <button onClick="jogar()" class="btnJogar" id="btnJogar">Jogar</button> -->
+            <div id="canvasHolder"></div>
+            <script>
+                // function jogar(){
+                //     var btnJogar = document.getElementById('btnJogar')
+                //     btnJogar.style.display = 'none' -->
+
+                function setup(){
+                    var canvas = createCanvas(600,400)
+                    canvas.parent('canvasHolder')
+                    somTrilha.loop()
+                }
+
+                function draw(){
+                    background(0)
+                    mostraBolinha()
+                    movimentaBolinha()
+                    colisaoBolinha()
+                    mostraRaquete(xRaquete, yRaquete)
+                    mostraRaquete(xOponenteRaquete, yOponenteRaquete)
+                    colisaoRaquete()
+                    colisaoOponenteRaquete()
+                    movimentaMinhaRaquete()
+                    movimentaOponenteRaquete()
+                    incluiPlacar()
+                    incluiPontos()
+                }
+                
+                // Colocar botão de iniciar
+                // Estipular valor máximo para pontuação
+                // Minha raquete ultrapassa borda y
+                // Nunca marco ponto no oponente
+                // separar arquivos js
+                // raquete do oponente ultrapassando a borda no bottom            
+            </script>
+        </div>
+    </main>
+    <footer>
+        <img>
+        <p class="copyright">&copy; CopyRight VDenny</p>
+    </footer>
+</body>
+</html>

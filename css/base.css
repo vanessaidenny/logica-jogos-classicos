@@ -1,0 +1,84 @@
+.fundoGradiente {
+    background: linear-gradient(to right, #d1d193 0%, #66cccc 100%);
+    border-style: 5px solid;
+    border-radius: 15px;
+    box-shadow: -3px -2px 30px 0px rgba(50, 50, 50, 0.75);
+    margin: 0 100px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    position: relative;
+}
+
+header h1,
+div h1,
+body h1 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 26px;
+    text-transform: uppercase;
+}
+
+header p,
+div p,
+body p {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+.jogos {
+    width: 940px;
+    margin: 0 auto;
+}
+
+.jogos li {
+    text-align: center;
+    display: inline-block;
+    height: 300px;
+    width: 30%;
+    vertical-align: top;    
+    margin: 0 1.5%;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    border:2px groove #EEEEEE;
+    border-radius: 5px;
+    color: black;
+    cursor: grab;
+}
+
+.jogos li:hover {
+    border: 2px solid rgb(77, 25, 199);
+    transform: scale(1.04);
+    transition: all 0.5s;
+    color: rgb(77, 25, 199);
+}
+
+.jogos li:active {
+    border: 2px solid #C78C19;
+    cursor: grabbing;
+}
+
+.jogos h2{
+    font-family: Ink Free;
+    font-size: 28px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.jogos h3 { 
+    font-family: Ink Free;
+    font-size: 22px;
+    margin: 10px auto;
+}
+
+.imgJogo {
+    width: 85%;
+    height: 65%;
+}
+
+.copyright {    
+    text-align: center;
+    font-size: 10px;
+    margin-top: 15px;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="img/navicon.png">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/layout_jogo.css">
+    <title>Jogo - Alvo</title>
+</head>
+
+<body>
+    <header>           
+        <a href="index.html"><button class="btnHome"><< Home</button></a>
+        <h1>Jogo - Alvo</h1>
+        <p>Tente acertar o centro do alvo, clicando na bolinha vermelha central!</p>
+    </header>
+    <main>
+        <div class="fundoGradiente">
+            <section class="dificuldade">
+                Selecione a dificuldade:
+                <select id="dificuldade">
+                    <option value="facil">Fácil</option>
+                    <option value="medio">Médio</option>
+                    <option value="dificil">Difícil</option>
+                </select>
+                <button onClick="jogar()" class="btnJogar" id="btnJogar">Jogar</button>
+                <br/><br/>
+                <canvas width=600 height=400>
+                    Se você visualizar esse texto, seu browser não suporta a tag canvas.</canvas>
+            </section>
+            <script>
+                //tela inicial     
+                var tela = document.querySelector('canvas')
+                var pincel = tela.getContext('2d')
+
+                pincel.fillStyle = 'black'
+                pincel.fillRect(0, 0, 600, 400)
+                
+                var timer = false
+
+                //loop do jogo
+                function jogar(){
+
+                    var btnJogar = document.getElementById('btnJogar')
+                    btnJogar.style.display = 'none'
+
+                    if (timer) {clearInterval(timer)}
+                        
+                    //definição de dificuldade
+                    var z = document.getElementById("dificuldade").value
+                    
+                    function velocidade(){
+                        switch (z){
+                            case "facil": return 800
+                            case "medio": return 500
+                            case "dificil": return 400
+                            }
+                    }
+
+                    //desenho do alvo
+                    var raio = 10
+                    var xAleatorio
+                    var yAleatorio
+
+                    function desenhaCirculo(x, y, raio, cor) {
+                        pincel.fillStyle = cor
+                        pincel.beginPath()
+                        pincel.arc(x, y, raio, 0, 2 * Math.PI)
+                        pincel.fill()
+                    }
+
+                    function limpaTela() {
+                        pincel.fillStyle = 'black'
+                        pincel.fillRect(0, 0, 600, 400)
+                    }
+
+                    function desenhaAlvo(x,y){
+                        desenhaCirculo(x, y, raio+20, 'red')
+                        desenhaCirculo(x, y, raio+10, 'white')
+                        desenhaCirculo(x, y, raio, 'red')
+                    }
+
+                    //movimentação aleatória
+                    function sorteiaPosicao(maximo){
+                        return Math.floor(Math.random()*maximo)
+                    }
+                    
+                    function atualizaTela(){
+                        limpaTela();
+                        xAleatorio = sorteiaPosicao(600)
+                        yAleatorio = sorteiaPosicao(400)
+                        desenhaAlvo(xAleatorio, yAleatorio)
+                    }
+                    
+                    timer = setInterval(atualizaTela, velocidade())
+
+                    //mensagem de vitória
+                    function dispara(evento) {
+
+                        var x = evento.pageX - tela.offsetLeft;
+                        var y = evento.pageY - tela.offsetTop;
+
+                        if((x > xAleatorio - raio)
+                        && (x < xAleatorio + raio)
+                        && (y > yAleatorio - raio)
+                        && (y < yAleatorio + raio)) {
+                            alert('Acertou!');
+                        }
+                    }
+                    tela.onclick = dispara;
+
+                }
+
+            //next
+            //1) mudar o jeito de aparecer a vitória
+            //2) computar pontuação
+            //3) separar arquivos em css e js
+            //4) contagem de cliques
+
+            </script>
+        </div>
+    </main>
+    <footer>
+        <img>
+        <p class="copyright">&copy; CopyRight VDenny</p>
+    </footer>
+</body>
+</html>

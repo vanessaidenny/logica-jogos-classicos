@@ -1,0 +1,60 @@
+.btnHome {
+    text-transform: uppercase;
+    font-family: Ink Free;
+    font-weight: 800;
+    font-size: 24px;   
+    width: 120px;
+    height: 45px;
+    border: none;
+    cursor: grab;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px 100px;
+}
+
+.btnJogar{
+    text-transform: uppercase;
+    font-family: Ink Free;
+    font-weight: 800;
+    font-size: 38px;
+    color: #FFFFFF;
+    background: #000000;
+    border: 2px groove #FFFFFF;
+    cursor: grab;
+    position: absolute;
+    top: 50%;
+    right: 44%;
+}
+
+.btnJogar:hover{
+    transform: scale(1.5);
+    transition: all 0.5s;
+}
+
+.btnHome:hover {
+    padding-bottom: 10px;
+    transition: all 0.5s;
+}
+
+.btnHome:active,
+.btnJogar:active {
+    cursor: grabbing;
+}
+
+
+#canvasHolder {
+    display: flex;
+    justify-content: center; 
+}
+
+.dificuldade {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+.dificuldade select {
+    text-transform: uppercase;
+    font-size: 16px;
+}
