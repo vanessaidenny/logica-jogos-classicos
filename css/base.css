@@ -4,8 +4,7 @@
     border-radius: 15px;
     box-shadow: -3px -2px 30px 0px rgba(50, 50, 50, 0.75);
     margin: 0 100px;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    padding: 20px 0;
     position: relative;
 }
 
@@ -81,4 +80,45 @@ body p {
     text-align: center;
     font-size: 10px;
     margin-top: 15px;
+}
+
+/* responsividade mobile */
+@media screen and (max-width: 480px) {
+    header h1,
+    div h1,
+    body h1 {
+        font-size: 20px;
+    }
+
+    header p,
+    div p,
+    body p {
+        font-size: 18px;
+    }
+
+    .jogos {
+        width: auto;
+        margin: 15px auto;
+        padding-right: 35px;
+    }
+
+    .fundoGradiente {
+        margin: 10px;
+    }
+
+    .jogos li {
+        display: block;
+        width: auto;    
+        height: auto;
+        margin: 10px auto;
+    }
+    
+    .jogos li:active {
+        border: 3px solid rgb(77, 25, 199);
+    }
+
+    .imgJogo {
+        width: 85%;
+        height: 55%;
+    }
 }

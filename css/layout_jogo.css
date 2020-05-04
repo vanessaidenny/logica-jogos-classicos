@@ -11,6 +11,7 @@
     top: 0;
     left: 0;
     margin: 20px 100px;
+    background-color: none;
 }
 
 .btnJogar{
@@ -41,7 +42,6 @@
 .btnJogar:active {
     cursor: grabbing;
 }
-
 
 #canvasHolder {
     display: flex;
